@@ -2,6 +2,8 @@
 
 Grade how expensive a pull request is to review — before a human opens it. Feed it a unified diff; it computes churn (added+removed), file count, and directory dispersion, grades S/M/L/XL, and emits split suggestions: exclude generated/lock files, split across subsystems, add tests. Pure Python, standard library only, one local file in.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 "Please review" hides a 3-line rename and a 2,000-line migration behind the same ping. Review quality collapses on large diffs — reviewers skim, approvals become rubber stamps — and the fix is boring: keep PRs small and single-purpose. But nothing in the standard toolchain tells an author, at PR-writing time, that their diff spans 4 subsystems, is 60% lockfile churn, or touches no tests. That judgment is mechanical and belongs in a script.
